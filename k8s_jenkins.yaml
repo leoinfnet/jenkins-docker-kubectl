@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: cirolini/jenkins-docker-kubectl
+        image: leoinfnet/jenkinsdockerkubectl:latest
         ports:
           - name: http-port
             containerPort: 8080
