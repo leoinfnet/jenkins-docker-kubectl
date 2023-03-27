@@ -13,7 +13,7 @@ To develop this project you need Docker and a minimum kubernetes enviroment like
 To get a local version you need follow the steps:
 
 ```
-$ git github.com/cirolini/jenkins-docker-kubectl
+$ git github.com/leoinfnet/jenkins-docker-kubectl
 $ docker build -t jenkins-cicd .
 ```
 
@@ -47,7 +47,7 @@ Install the suggested plugins e restart.
 ### How Run in a Kubernetes cluster
 
 ```
-$ kubectl apply -f https://raw.githubusercontent.com/cirolini/jenkins-docker-kubectl/master/k8s_jenkins.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/leoinfnet/jenkins-docker-kubectl/master/k8s_jenkins.yaml
 ```
 
 This will create a Persistent Volume, a Service and Deployment to run Jenkins. And will apply the rbac role to grant Jenkins permissions for cluster admin.
@@ -55,7 +55,7 @@ This will create a Persistent Volume, a Service and Deployment to run Jenkins. A
 I recommend that you install a registry to, for this follow this command:
 
 ```
-$ kubectl apply -f https://raw.githubusercontent.com/cirolini/jenkins-docker-kubectl/master/k8s_registry.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/leoinfnet/jenkins-docker-kubectl/master/k8s_registry.yaml
 ```
 
 Now you have a Registry, this is a repository for storing and distributing Docker images.
@@ -73,11 +73,3 @@ registry-95c457bdb-9frmt   2/2       Running   0          5m
 kubectl exec jenkins-5ccb4f9498-56svc cat /var/jenkins_home/secrets/initialAdminPassword
 33c7f2604a274647acb327b87dba6427
 ```
-
-### Example
-
-This is a example of a project tha you can use in this Jenkins:
-https://github.com/cirolini/Docker-Flask-uWSGI
-
-And here have a tutorial to implement this case:
-https://medium.com/@cirolini/entrega-continua-com-kubernetes-e-jenkins-84bd9834a749
